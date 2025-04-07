@@ -1,35 +1,73 @@
 import React, { useEffect, useState } from "react";
-import { IMAGE_URL } from "../utils/requests"; // Image URL for posters
-import { fetchMovies } from "../utils/axiosinstance"; // Correct import for fetchMovies from axiosinstance
+import YouTube from "react-youtube";
+import movieTrailer from "movie-trailer";
+import { IMAGE_URL } from "../utils/requests";
+import { fetchMovies } from "../utils/axiosinstance";
 import "./Row.css";
 
 const Row = ({ title, fetchUrl, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
+  const [trailerUrl, setTrailerUrl] = useState(""); // store YouTube video ID
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
-      const results = await fetchMovies(fetchUrl); // Fetch movies based on fetchUrl
-      setMovies(results); // Set fetched movies to state
-    }
+    const fetchData = async () => {
+      try {
+        const data = await fetchMovies(fetchUrl);
+        if (data && data.length > 0) {
+          setMovies(data);
+        } else {
+          setMovies([]);
+        }
+      } catch (error) {
+        setError("Error fetching movies.");
+        console.error("Error fetching movies:", error);
+      }
+    };
     fetchData();
-  }, [fetchUrl]); // Dependency array to re-fetch when fetchUrl changes
+  }, [fetchUrl]);
+
+  const handleClick = (movie) => {
+    if (trailerUrl) {
+      setTrailerUrl(""); // close the trailer if already open
+    } else {
+      movieTrailer(movie?.title || movie?.name || movie?.original_name || "")
+        .then((url) => {
+          const urlParams = new URLSearchParams(new URL(url).search);
+          setTrailerUrl(urlParams.get("v")); // YouTube video ID
+        })
+        .catch((err) => console.log("Trailer not found", err));
+    }
+  };
+
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
+  if (error) return <div>{error}</div>;
+  if (movies.length === 0) return <div>No movies available</div>;
 
   return (
     <div className="row">
       <h2>{title}</h2>
       <div className="row_posters">
-        (movies.map((movies)  (
-        <img
-          key={movies}
-          className={`row_poster ${isLargeRow && "row_posterLarge"}`}
-          src={`${IMAGE_URL}${isLargeRow ? movies?.poster_path : movies?.backdrop_path}`} // Select the right image based on row type
-          alt={movies?.name} // Alt text for accessibility
-        />
-        )))
+        {movies.map((movie) => (
+          <img
+            key={movie.id}
+            onClick={() => handleClick(movie)}
+            className={`row_poster ${isLargeRow && "row_posterLarge"}`}
+            src={`${IMAGE_URL}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
+            alt={movie.name || movie.title}
+          />
+        ))}
       </div>
+      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </div>
   );
 };
 
 export default Row;
-// This component fetches and displays a row of movies based on the provided fetchUrl and title props.

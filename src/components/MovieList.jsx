@@ -53,14 +53,14 @@ const MovieList = ({ fetchUrl, title }) => {
     <div className="row">
       <h2>{title}</h2>
       <div className="row__posters">
-        (movies.map((movies)  (
+        {/* (movies.map((movies) ( */}
         <img
           key={movies}
           className="row__poster"
           src={`https://image.tmdb.org/t/p/w500${movies?.poster_path}`}
           alt={movies?.name || movies?.title}
         />
-        )))
+        {/* ))) */}
       </div>
     </div>
   );

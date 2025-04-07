@@ -9,7 +9,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <p className="footer__title">Questions? Call 1-800-000-0000</p>
+        <p className="footer__title">Questions? Call 0960737167</p>
 
         <div className="footer__social">
           <FacebookOutlinedIcon className="footer__icon" />
@@ -40,7 +40,7 @@ function Footer() {
         </div>
 
         <p className="footer__copyright">
-          Netflix Ethiopia Clone &copy; 2025
+          Netflix Ethiopia Clone by Aderajew  &copy; 2025
         </p>
       </div>
     </footer>
