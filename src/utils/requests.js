@@ -1,3 +1,5 @@
+// src/utils/requests.js
+
 const API_KEY =
   import.meta.env.VITE_TMDB_API_KEY;
 
@@ -12,8 +14,8 @@ const requests = {
   fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
 };
 
-export default requests;
-export { API_KEY };
-export const BASE_URL = "https://api.themoviedb.org/3";
+// TMDB base image URL
 export const IMAGE_URL = "https://image.tmdb.org/t/p/original";
-export const IMAGE_ORIGINAL_URL = "https://image.tmdb.org/t/p/original"; // For original images
+
+export default requests;
+export const IMAGE_ORIGINAL_URL = "https://image.tmdb.org/t/p/original"; // For original  images

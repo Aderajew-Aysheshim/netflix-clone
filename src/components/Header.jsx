@@ -38,14 +38,14 @@ function Header() {
           </ul>
         </div>
 
-        {/* User Avatar */}
+        {/* User Avatar
         <a href="/profile">
           <img
             className="header__avatar"
             src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
             alt="Avatar"
           />
-        </a>
+        </a> */}
       </div>
     </div>
   );
