@@ -1,13 +1,14 @@
 import React from 'react';
-import './App.css';  // Make sure to import your CSS here
-import Header from './components/Header';  // Header component
-import Footer from './components/Footer';  // Footer component
-import Home from './components/Home';  // Home component
-import Row from './components/Row';  // Row component to display movie rows
-import MovieList from './components/MovieList';  // MovieList component to display a list of movies
-import Banner from './components/Banner';  // Banner component to display a promotional banner
-import requests from './utils/requests';  // Requests for fetching movies
+import './App.css'; 
+import Header from './components/Header'; 
+import Footer from './components/Footer';  
+import Home from './components/Home';  
+import Row from './components/Row';  
+import MovieList from './components/MovieList';  
+import Banner from './components/Banner';  
+import requests from './utils/requests';
 import axiosInstance from './utils/axiosInstance';
+
 function App() {
 
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 import { IMAGE_URL } from "../utils/requests";
-import { fetchMovies } from "../utils/axiosinstance";
+import { fetchMovies } from "../utils/axiosInstance";
 import "./Row.css";
 
 const Row = ({ title, fetchUrl, isLargeRow }) => {
