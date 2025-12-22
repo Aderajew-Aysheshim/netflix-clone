@@ -1,12 +1,9 @@
 {
-    "homepage": "https://github.com/Aderajew-Aysheshim/netflix-clone.git",
-    "name": "client",
+    "name": "netflix-clone",
     "version": "0.0.1",
     "private": true,
     "scripts": {
         "dev": "vite",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist",
         "build": "vite build",
         "preview": "vite preview"
     },
@@ -23,8 +20,6 @@
     },
     "devDependencies": {
         "@vitejs/plugin-react": "^4.0.0",
-        "gh-pages": "^6.3.0",
-        "github-pages": "^3.0.2",
         "rollup-plugin-ignore": "^1.0.10",
         "vite": "^4.0.0"
     }
