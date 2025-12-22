@@ -4,9 +4,6 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Row from './components/Row';
 import MovieList from './components/MovieList';
-import Banner from './components/Banner';
-import requests from './utils/requests';
-import axiosInstance from './utils/axiosInstance';
 
 function App() {
 
