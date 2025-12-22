@@ -7,7 +7,7 @@ import Row from './components/Row';  // Row component to display movie rows
 import MovieList from './components/MovieList';  // MovieList component to display a list of movies
 import Banner from './components/Banner';  // Banner component to display a promotional banner
 import requests from './utils/requests';  // Requests for fetching movies
-import axiosInstance from './utils/axiosinstance';
+import axiosInstance from './utils/axiosInstance';
 function App() {
 
 
