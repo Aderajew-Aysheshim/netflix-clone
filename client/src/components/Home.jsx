@@ -1,11 +1,8 @@
-import React from 'react';
 import Row from './Row';
 import Banner from './Banner';
 import requests from '../utils/requests';
 import './Home.css';
 import Header from './Header'; // Ensure the path is correct
-import Footer from './Footer'; // Ensure the path is correct
-import RowList from './RowList';
 // Home component to display the main content of the app
 function Home() {
   return (

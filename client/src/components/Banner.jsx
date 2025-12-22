@@ -1,6 +1,6 @@
 // src/components/Banner.jsx
 import React, { useEffect, useState } from "react";
-import { fetchMovies } from "../utils/axiosinstance";
+import { fetchMovies } from "../utils/axiosInstance";
 import requests from "../utils/requests";
 import "./Banner.css";
 import { IMAGE_URL } from "../utils/requests";

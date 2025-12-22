@@ -1,4 +1,3 @@
-import React from "react";
 import "./NavBar.css"; // Ensure NavBar.css exists
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";

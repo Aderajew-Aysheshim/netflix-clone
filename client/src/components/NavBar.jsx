@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import './NavBar.css'; // Ensure you create a NavBar.css file
 
 function NavBar() {
