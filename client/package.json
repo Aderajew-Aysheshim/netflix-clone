@@ -22,5 +22,11 @@
         "@vitejs/plugin-react": "^4.0.0",
         "rollup-plugin-ignore": "^1.0.10",
         "vite": "^4.0.0"
-    }
+    },
+    "description": "This is a Netflix clone built with Vite + React. It features a dynamic UI, responsive navbar, footer, and more.",
+    "main": "eslint.config.js",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs"
 }
