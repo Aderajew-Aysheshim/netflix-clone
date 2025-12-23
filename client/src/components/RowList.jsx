@@ -1,3 +1,4 @@
+import React from "react";
 import Row from "./Row";
 import requests from "../utils/requests";
 
@@ -17,4 +18,3 @@ const RowList = () => {
 };
 
 export default RowList;
-// This component imports the Row component and the requests object from utils/requests.js.

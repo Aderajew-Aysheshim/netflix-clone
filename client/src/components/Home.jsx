@@ -1,9 +1,10 @@
+
+import React from "react";
 import Row from './Row';
 import Banner from './Banner';
 import requests from '../utils/requests';
 import './Home.css';
-import Header from './Header'; // Ensure the path is correct
-// Home component to display the main content of the app
+import Header from './Header'; 
 function Home() {
   return (
     <div className="Home">

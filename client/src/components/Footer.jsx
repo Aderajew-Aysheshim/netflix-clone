@@ -1,3 +1,5 @@
+
+import React from "react";
 import "./Footer.css";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -47,4 +49,3 @@ function Footer() {
 }
 
 export default Footer;
-// This Footer component serves as the bottom section of the Netflix clone app.

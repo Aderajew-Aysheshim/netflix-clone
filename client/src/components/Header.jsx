@@ -1,4 +1,5 @@
-import "./NavBar.css"; // Ensure NavBar.css exists
+import React from "react";
+import "./NavBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
@@ -8,7 +9,6 @@ function Header() {
   return (
     <div className="header">
       <div className="header__contents">
-        {/* Netflix Logo */}
         <a href="/">
           <img
             className="header__logo"
@@ -16,9 +16,7 @@ function Header() {
             alt="Netflix Logo"
           />
         </a>
-
-        {/* Navigation Menu */}
-        <ul className="header__nav">
+<ul className="header__nav">
           <li><a href="/">Home</a></li>
           <li><a href="/tv-shows">TV Shows</a></li>
           <li><a href="/movies">Movies</a></li>
@@ -27,7 +25,7 @@ function Header() {
           <li><a href="/browse">Browse by Languages</a></li>
         </ul>
 
-        {/* User Section */}
+      
         <div className="header__right">
           <ul>
             <li><SearchIcon /></li>

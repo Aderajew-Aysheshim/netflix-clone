@@ -1,3 +1,5 @@
+
+import React from "react";
 import { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
@@ -7,7 +9,7 @@ import "./Row.css";
 
 const Row = ({ title, fetchUrl, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
-  const [trailerUrl, setTrailerUrl] = useState(""); // store YouTube video ID
+  const [trailerUrl, setTrailerUrl] = useState(""); 
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -29,12 +31,12 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 
   const handleClick = (movie) => {
     if (trailerUrl) {
-      setTrailerUrl(""); // close the trailer if already open
+      setTrailerUrl(""); 
     } else {
       movieTrailer(movie?.title || movie?.name || movie?.original_name || "")
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
-          setTrailerUrl(urlParams.get("v")); // YouTube video ID
+          setTrailerUrl(urlParams.get("v")); 
         })
         .catch((err) => console.log("Trailer not found", err));
     }

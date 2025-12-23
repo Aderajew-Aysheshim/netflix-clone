@@ -1,5 +1,3 @@
-/* NavBar.css */
-
 .header {
     position: fixed;
     top: 0;
@@ -19,7 +17,6 @@
     max-width: 1400px;
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
 }
 
 .header__logo {

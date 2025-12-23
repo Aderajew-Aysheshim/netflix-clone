@@ -1,5 +1,7 @@
+
+import React from "react";
 import { useState, useEffect } from "react";
-import './NavBar.css'; // Ensure you create a NavBar.css file
+import './NavBar.css';
 
 function NavBar() {
   const [show, handleShow] = useState(false);
