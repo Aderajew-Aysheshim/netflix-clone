@@ -1,5 +1,4 @@
 
-import React from "react";
 import { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
