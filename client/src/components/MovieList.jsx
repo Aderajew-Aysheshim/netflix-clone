@@ -54,11 +54,11 @@ const MovieList = ({ fetchUrl, title }) => {
       <div className="row__posters">
 
         <img
-          key={movies}
-          className="row__poster"
-          src={`https://image.tmdb.org/t/p/w500${movies?.poster_path}`}
-          alt={movies?.name || movies?.title}
-        />
+            key={movie.id}
+            className="row__poster"
+            src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
+            alt={movie?.name || movie?.title}
+          />
 
       </div>
     </div>

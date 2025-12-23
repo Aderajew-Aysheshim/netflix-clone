@@ -1,5 +1,4 @@
 
-import React from "react";
 import Row from './Row';
 import Banner from './Banner';
 import requests from '../utils/requests';

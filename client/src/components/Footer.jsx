@@ -1,5 +1,3 @@
-
-import React from "react";
 import "./Footer.css";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -41,7 +39,7 @@ function Footer() {
         </div>
 
         <p className="footer__copyright">
-          Netflix Ethiopia Clone by Aderajew  &copy; 2025
+          Netflix Ethiopia Clone by Aderajew &copy; 2025
         </p>
       </div>
     </footer>
