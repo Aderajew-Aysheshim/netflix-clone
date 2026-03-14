@@ -1,6 +1,41 @@
 import { useEffect, useState } from 'react';
-import { fetchMovies } from '../api/tmdb';
+import axios from 'axios';
 import './Row.css';
+
+const tmdbAPI = axios.create({
+  baseURL: import.meta.env.VITE_TMDB_BASE_URL,
+  params: {
+    api_key: import.meta.env.VITE_TMDB_API_KEY,
+    language: 'en-US'
+  }
+});
+
+
+tmdbAPI.interceptors.request.use(config => {
+  console.log('Requesting:', config.url);
+  return config;
+});
+
+
+tmdbAPI.interceptors.response.use(
+  response => response.data,
+  error => {
+    console.error('API Error:', error.response?.status, error.message);
+    return Promise.reject(error);
+  }
+);
+
+
+export const fetchMovies = async (endpoint) => {
+  try {
+    const { results } = await tmdbAPI.get(endpoint);
+    return results;
+  } catch (error) {
+    console.error('Fetch error:', error);
+    return [];
+  }
+};
+
 
 const MovieList = ({ fetchUrl, title }) => {
   const [movies, setMovies] = useState([]);
@@ -17,14 +52,14 @@ const MovieList = ({ fetchUrl, title }) => {
     <div className="row">
       <h2>{title}</h2>
       <div className="row__posters">
-        {movies.map(movie => (
-          <img
-            key={movie.id}
-            className="row__poster"
-            src={`${import.meta.env.VITE_TMDB_IMAGE_URL}/w500${movie.poster_path}`}
-            alt={movie.name || movie.title}
-          />
-        ))}
+
+        <img
+          key={movies}
+          className="row__poster"
+          src={`https://image.tmdb.org/t/p/w500${movies?.poster_path}`}
+          alt={movies?.name || movies?.title}
+        />
+
       </div>
     </div>
   );
